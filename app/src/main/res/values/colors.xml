@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base theme colors -->
+    <color name="colorPrimary">#009688</color>
+    <color name="colorPrimaryDark">#00796b</color>
+    <color name="colorPrimaryLight">#b2dfdb</color>
+    <color name="colorAccent">#ff9800</color>
+    <color name="colorDivider">#bdbdbd</color>
+
+
+    <!-- Text colors. -->
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#757575</color>
+
+    <!-- Extra colors. -->
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorTranslucentWhite">#80ffffff</color>
+</resources>
