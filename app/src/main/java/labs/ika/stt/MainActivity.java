@@ -11,6 +11,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -27,10 +28,10 @@ import android.view.ViewGroup;
 import android.content.Intent;
 
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.CollationElementIterator;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -38,21 +39,18 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE_RECORD_AUDIO = 1;
-    private TextView text;
 
     public void onTab1BtnClick(View view) {
 
 
         if (view.getId() == R.id.imageRecBtn) {
 
-            //New code lines BEGIN***************************************************************************************************
-
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
                 //checking the permission status
                 if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) !=
                         PackageManager.PERMISSION_GRANTED) {
-                    //request the permission
+                    //prompt permission request
                     ActivityCompat.requestPermissions(this,
                             new String[]{Manifest.permission.RECORD_AUDIO},
                             REQUEST_CODE_RECORD_AUDIO);
@@ -66,8 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    //recognize the speech
+    //this will initiate prompt for speech recognition and will recognize the speech
     public void promptSpeechInput() {
         Intent i = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         i.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
@@ -82,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //display the speech in text format
+    //display the recognized speech in text format
     public void onActivityResult (int request_code, int result_code, Intent i) {
         super.onActivityResult(request_code, result_code, i);
 
@@ -91,11 +88,13 @@ public class MainActivity extends AppCompatActivity {
             case 100:
                 if (result_code == RESULT_OK && i != null) {
                     ArrayList<String> result = i.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    TextView text = (TextView)findViewById(R.id.tab1text);
                     text.setText(result.get(0));
                 }
                 break;
         }
     }
+
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -118,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //links 'text' to TextView with id 'myText'
-        text = (TextView)findViewById(R.id.tab1text);
+        TextView text = (TextView)findViewById(R.id.tab1text);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -175,7 +174,8 @@ public class MainActivity extends AppCompatActivity {
             dialog.setContentView(R.layout.about_dialog);
             dialog.setTitle("About this app");
             //EDIT TEXT DISABLED
-            // final EditText about = (EditText) dialog.findViewById(R.id.aboutText);
+            //final EditText about = (EditText) dialog.findViewById(R.id.aboutText);
+            //this Done button is button of the about page
             Button Done          = (Button) dialog.findViewById(R.id.doneBtn);
             dialog.show();
 
@@ -229,5 +229,9 @@ public class MainActivity extends AppCompatActivity {
             }
             return null;
         }
+    }
+    // this defines the actions when upload button gets clicked
+    public void onTab2BtnClick(View view){
+        Toast.makeText(this, "This option will be added soon", Toast.LENGTH_SHORT).show();
     }
 }

@@ -11,7 +11,7 @@
     <string name="about_text">One thing I would like to mention is that we want the popup to be attached to the button that opened it.
         For example if the “Show Popup” button from the screenshot above would be positioned in the middle of the screen, we want the popup window stick to the button’s position.
         To achieve this, first we should get the button’s “x” and “y” position on the screen, and pass them to the popup window.
-        Then will we use an offset to align the popup properly – a bit to the right, and a bit down, so it won’t overlap the whole button.</string>
+    </string>
 
 
 

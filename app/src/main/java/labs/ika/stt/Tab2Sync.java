@@ -7,9 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by Vikas Kumar on 31-03-2017.
- */
 
 public class Tab2Sync extends Fragment {
 
