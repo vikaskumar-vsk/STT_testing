@@ -5,7 +5,12 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_settings">Settings</string>
 
+    <string name="tab1_text">Touch the button below to start recording the speech!</string>
+    <string name="tab2_text">Upload compatible audio file to proceed</string>
+    <string name="upload_btn_text">Upload</string>
 
+    <string name="permission_message">This app needs to record audio and recognize your speech.</string>
+    <string name="listening">Listening…</string>
 
     <!-- Strings related to About dialog -->
     <string name="about_text">One thing I would like to mention is that we want the popup to be attached to the button that opened it.

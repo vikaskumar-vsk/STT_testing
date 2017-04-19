@@ -1,39 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
-
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
         android:id="@+id/tab1text"
+        android:onClick="onTab1TxtClick"
+        android:gravity="center"
         android:textSize="18sp"
         android:textColor="@color/colorPrimaryText"
         android:textAlignment="center"
-        android:text="Touch the button below to start recording the speech!"
+        android:text="@string/tab1_text"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
         android:layout_marginRight="25dp"
-        android:layout_marginTop="155dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"/>
 
 
     <ImageButton
-        android:src="@drawable/ic_mic_black"
         android:id="@+id/imageRecBtn"
-        android:background="@drawable/round_button"
-        android:onClick="onTab1BtnClick"
-        android:layout_marginBottom="120dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:elevation="4dp"
-        android:padding="12dp"
-        android:scaleType="fitCenter"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="120dp"
         android:adjustViewBounds="true"
-        android:hapticFeedbackEnabled="true" />
+        android:background="@drawable/round_button"
+        android:hapticFeedbackEnabled="true"
+        android:icon="@drawable/ic_mic"
+        android:onClick="onClick"
+        android:padding="15dp"
+        android:elevation="4dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_mic" />
 
 </RelativeLayout>

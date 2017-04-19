@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<full-backup-content>
+    <!-- We don't want the access token to be backed up -->
+    <exclude
+        domain="sharedpref"
+        path="AccessTokenLoader.xml"/>
+</full-backup-content>

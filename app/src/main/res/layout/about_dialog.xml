@@ -29,7 +29,6 @@
             android:id="@+id/doneBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorWhite"
             android:onClick="onClickDoneBtn"
             android:text="Done"
             android:textAlignment="center"

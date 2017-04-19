@@ -3,6 +3,8 @@ package labs.ika.stt;
 import android.Manifest;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
+import android.content.ClipData;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.speech.RecognizerIntent;
@@ -26,6 +28,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.content.Intent;
+import android.content.ClipboardManager;
 
 import android.widget.Button;
 import android.widget.TextView;
@@ -39,8 +42,9 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE_RECORD_AUDIO = 1;
+    private static final int REQUEST_CODE_READ_EXTERNAL_STORAGE = 1;
 
-    public void onTab1BtnClick(View view) {
+    public void onClick (View view) {
 
 
         if (view.getId() == R.id.imageRecBtn) {
@@ -62,7 +66,26 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+//        if (view.getId() == R.id.uploadBtn) {
+//
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//
+//                //checking the permission status
+//                if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) !=
+//                        PackageManager.PERMISSION_GRANTED) {
+//                    //prompt permission request
+//                    ActivityCompat.requestPermissions(this,
+//                            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+//                            REQUEST_CODE_READ_EXTERNAL_STORAGE);
+//                } else {
+//                    promptSpeechInput();
+//                }
+//            }
+//        }
     }
+
+
+
 
     //this will initiate prompt for speech recognition and will recognize the speech
     public void promptSpeechInput() {
@@ -116,8 +139,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+
+
+
         //links 'text' to TextView with id 'myText'
         TextView text = (TextView)findViewById(R.id.tab1text);
+
+
+
+
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -233,5 +266,9 @@ public class MainActivity extends AppCompatActivity {
     // this defines the actions when upload button gets clicked
     public void onTab2BtnClick(View view){
         Toast.makeText(this, "This option will be added soon", Toast.LENGTH_SHORT).show();
+        }
+
+    public void onTab1TxtClick(View view){
+        Toast.makeText(this, "Clipboard option will be added someday", Toast.LENGTH_SHORT).show();
     }
 }

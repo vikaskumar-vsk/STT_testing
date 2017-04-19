@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Base theme colors -->
-    <color name="colorPrimary">#009688</color>
-    <color name="colorPrimaryDark">#00796b</color>
-    <color name="colorPrimaryLight">#b2dfdb</color>
-    <color name="colorAccent">#ff9800</color>
-    <color name="colorDivider">#bdbdbd</color>
+    <color name="colorPrimary">#FF5252</color>
+    <color name="colorPrimaryDark">#e04141</color>
+    <color name="colorPrimaryLight">#ff5f52</color>
+    <color name="colorAccent">#FF5252</color>
+    <color name="colorBackground">#F5F5F5</color>
 
 
     <!-- Text colors. -->
     <color name="colorPrimaryText">#212121</color>
     <color name="colorSecondaryText">#757575</color>
+    <color name="colorDivider">#BDBDBD</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
 
-    <!-- Extra colors. -->
-    <color name="colorWhite">#ffffff</color>
-    <color name="colorTranslucentWhite">#80ffffff</color>
+    <color name="status_hearing">#7B1FA2</color>
+    <color name="status_not_hearing">#757575</color>
+
 </resources>
